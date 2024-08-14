@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    border: 1px solid rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.circle {
+    width: 25rem;
+    height: 25rem;
+    background-color: #ece8e8;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(10, 20, 30);
+}
+
+.point {
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hour-hand {
+    width: 140px;
+    height: 5px;
+    background-color: rgb(20, 1, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: rotate 43200s linear infinite;
+}
+
+.minute-hand {
+    width: 175px;
+    height: 2px;
+    background-color: rgb(127, 103, 103);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: rotate 3600s linear infinite;
+}
+
+.second-hand {
+    width: 180px;
+    height: 10px;
+    background-color: rgb(17, 14, 14);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform-origin: left;
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+        transform-origin: left;
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.number {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+    rotate(calc(30deg * var(--i)))
+    translateX(600%);
+    font-size: 1.5rem;
+}
