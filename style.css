@@ -3,11 +3,19 @@
     padding: 0;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container {
+    margin-top: 10px;
     width: 500px;
-    height: 500px;
     border: 1px solid rebeccapurple;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
@@ -20,11 +28,12 @@
     position: relative;
     border-radius: 50%;
     box-shadow: 0 0 10px rgb(10, 20, 30);
+    border: 5px solid burlywood;
 }
 
 .point {
-    width: 5px;
-    height: 5px;
+    width: 1rem;
+    height: 1rem;
     background-color: #000;
     border-radius: 50%;
     position: absolute;
@@ -33,43 +42,65 @@
     transform: translate(-50%, -50%);
 }
 
-.hour-hand {
+#hour-hand {
     width: 140px;
     height: 5px;
     background-color: rgb(20, 1, 1);
     position: absolute;
     top: 50%;
     left: 50%;
-    animation: rotate 43200s linear infinite;
+    transform-origin: left;
+    transform: translateY(-50%);
+    animation: rotate-hour 43200s linear infinite;
 }
 
-.minute-hand {
+#minute-hand {
     width: 175px;
     height: 2px;
     background-color: rgb(127, 103, 103);
     position: absolute;
     top: 50%;
     left: 50%;
-    animation: rotate 3600s linear infinite;
+    transform-origin: left;
+    transform: translateY(-50%);
+    animation: rotate-minute 3600s linear infinite;
 }
 
-.second-hand {
+#second-hand {
     width: 180px;
-    height: 10px;
+    height: 1px;
     background-color: rgb(17, 14, 14);
     position: absolute;
     top: 50%;
     left: 50%;
-    animation: rotate 60s linear infinite;
+    transform-origin: left;
+    transform: translateY(-50%);
+    animation: rotate-second 60s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes rotate-hour {
     from {
-        transform-origin: left;
         transform: translateY(-50%) rotate(0deg);
     }
     to {
-        transform-origin: left;
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate-minute {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate-second {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to {
         transform: translateY(-50%) rotate(360deg);
     }
 }
@@ -80,8 +111,84 @@
     height: 2rem;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
-    rotate(calc(30deg * var(--i)))
-    translateX(600%);
+    transform: translate(-50%, -50%) rotate(calc(30deg * var(--i))) translate(11rem) rotate(calc(-30deg * var(--i)));
     font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.heading {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.rectangle {
+    width: 200px;
+    padding: 25px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#second {
+    animation: blink 1s infinite;
+    font-size: 1.5rem;
+    color: red;
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(10, 20, 30);
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+#minute {
+    animation: blink 1s infinite;
+    font-size: 1.5rem;
+    color: green;
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(10, 20, 30);
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+#hour {
+    animation: blink 1s infinite;
+    font-size: 1.5rem;
+    color: blue;
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(10, 20, 30);
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+#ampm {
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(10, 20, 30);
+    background-color: #fff;
+    border: 1px solid #ccc;
 }
