@@ -13,7 +13,6 @@ body {
 .container {
     margin-top: 10px;
     width: 500px;
-    border: 1px solid rebeccapurple;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,16 +33,17 @@ body {
 .point {
     width: 1rem;
     height: 1rem;
-    background-color: #000;
+    background-color: #595454;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 100;
 }
 
 #hour-hand {
-    width: 140px;
+    width: 100px;
     height: 5px;
     background-color: rgb(20, 1, 1);
     position: absolute;
@@ -51,23 +51,23 @@ body {
     left: 50%;
     transform-origin: left;
     transform: translateY(-50%);
-    animation: rotate-hour 43200s linear infinite;
+    border-radius: 20px 20px;
 }
 
 #minute-hand {
-    width: 175px;
-    height: 2px;
+    width: 150px;
+    height: 3.5px;
     background-color: rgb(127, 103, 103);
     position: absolute;
     top: 50%;
     left: 50%;
     transform-origin: left;
     transform: translateY(-50%);
-    animation: rotate-minute 3600s linear infinite;
+    border-radius: 20px 20px;
 }
 
 #second-hand {
-    width: 180px;
+    width: 175px;
     height: 1px;
     background-color: rgb(17, 14, 14);
     position: absolute;
@@ -75,7 +75,7 @@ body {
     left: 50%;
     transform-origin: left;
     transform: translateY(-50%);
-    animation: rotate-second 60s linear infinite;
+    border-radius: 20px 20px;
 }
 
 @keyframes rotate-hour {
@@ -191,4 +191,11 @@ body {
     box-shadow: 0 0 10px rgb(10, 20, 30);
     background-color: #fff;
     border: 1px solid #ccc;
+}
+
+.line {
+    position: absolute;
+    font-size: 100px;
+    transform: translate(-50%, -50%) rotate(calc(30deg * var(--i))) translate(10rem);
+    transform-origin: center bottom;
 }

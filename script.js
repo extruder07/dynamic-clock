@@ -1,5 +1,5 @@
 setInterval(() => {
-    let time = new Date;
+    const time = new Date;
     let seconds = time.getSeconds();
     let minutes = time.getMinutes();
     let hours = time.getHours();
@@ -15,9 +15,22 @@ setInterval(() => {
     ampmElement.innerText = ampm;
 }, 1000);
 
-let time = new Date;
+setInterval(() => {
+    
+const time = new Date();
 let seconds = time.getSeconds();
 let minutes = time.getMinutes();
 let hours = time.getHours();
 
-// let hourAngle = (360 / 12) * hours + minutes * (787)
+let secondHand = document.getElementById('second-hand');
+let minuteHand = document.getElementById('minute-hand');
+let hourHand = document.getElementById('hour-hand');
+
+let secondAngle = (360 / 60) * seconds - 90;
+let minuteAngle = (360 / 60) * minutes + (6 / 60) * seconds - 90;
+let hourAngle = (360 / 12) * (hours % 12) + (30 / 60) * minutes - 90;
+
+secondHand.style.transform = `translateY(-50%) rotate(${secondAngle}deg)`;
+minuteHand.style.transform = `translateY(-50%) rotate(${minuteAngle}deg)`;
+hourHand.style.transform = `translateY(-50%) rotate(${hourAngle}deg)`;
+}, 1000);
