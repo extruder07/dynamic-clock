@@ -195,3 +195,79 @@ body {
     background-color: #fff;
     border: 1px solid #ccc;
 }
+
+.upper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    text-align: center;
+    gap: 5px;
+}
+
+.alarm, .timer {
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input[type="time"], .timer-inputs input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.timer-inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-inputs input[type="number"] {
+    width: 50px;
+    text-align: center;
+}
+
+.timer-inputs span {
+    font-size: 1.5rem;
+    margin: 0 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:last-child {
+    margin-bottom: 0;
+}

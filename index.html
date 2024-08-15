@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="upper">
+        <div class="alarm">
+            <h1>Alarm</h1>
+            <label for="alarm-input">Please Select the Time</label>
+            <input type="time" id="alarm-input">
+            <button id="cancel-alarm-button">Cancel Alarm</button>
+            <button id="set-alarm-button">Set Alarm</button>
+        </div>
+        
+        <div class="timer">
+            <h1>Timer</h1>
+            <label>Please Select the Time</label>
+            <div class="timer-inputs">
+                <input type="number" id="timer-hours" placeholder="HH" min="0" max="23">
+                <span>:</span>
+                <input type="number" id="timer-minutes" placeholder="MM" min="0" max="59">
+                <span>:</span>
+                <input type="number" id="timer-seconds" placeholder="SS" min="0" max="59">
+            </div>
+            <div id="remaining-time">Remaining Time: 00:00:00</div> <!-- New div for remaining time -->
+            <button id="cancel-timer-button">Cancel Timer</button>
+            <button id="set-timer-button">Set Timer</button>
+        </div>
+    </div>
+    
+      
+    
     <div class="container">
         <h1 class="heading" style="margin-bottom: 1rem;">Dynamic wall clock</h1>
         <div class="circle">
@@ -34,7 +61,6 @@
             <div id="second"></div>
             <div id="ampm"></div>
         </div>
-        
     </div>
     <script src="script.js"></script>
 </body>
